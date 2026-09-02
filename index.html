@@ -8,6 +8,17 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=EB+Garamond&family=Viaoda+Libre&family=The+Nautigal&family=Ms+Madi&family=Baskerville&family=Uchen&family=Lora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Open Graph -->
+    <meta property="og:title" content="Свадьба Нурхамидали &amp; Бурулай" />
+    <meta property="og:description" content="Приглашаем вас на нашу свадьбу! 10 октября 2026 года в 16:00. Ждём вас!" />
+    <meta property="og:url" content="https://ваш-сайт.vercel.app" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://ваш-сайт.vercel.app/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Свадьба Нурхамидали &amp; Бурулай" />
+    <meta name="twitter:card" content="summary_large_image" />
+
     <style>
         /* ===== RESET & BASE ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -269,7 +280,7 @@
         .paper-bg {
             position: absolute;
             inset: 0;
-            background-image: url('images/paper.webp');
+            background-image: url('images/paper.png');
             background-size: 100% auto;
             background-position: top center;
             mix-blend-mode: multiply;
@@ -310,6 +321,11 @@
             opacity: 0.1;
             pointer-events: none;
             max-width: none;
+            background-image: url('images/castle-background.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100%;
         }
         .save-the-date {
             position: relative;
@@ -344,6 +360,10 @@
             inset: 0;
             width: 100%;
             z-index: 10;
+            background-image: url('images/envelope-background.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
         }
         .photo-frame {
             position: absolute;
@@ -386,6 +406,11 @@
             z-index: 30;
             width: 100%;
             pointer-events: none;
+            background-image: url('images/envelope-cover.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            height: 100%;
         }
 
         .names {
@@ -666,9 +691,7 @@
             text-underline-offset: 4px;
         }
 
-        /* ============================================================ */
-        /*  RSVP БЛОК — шире, сероватый фон, красивые шрифты             */
-        /* ============================================================ */
+        /* ===== RSVP БЛОК ===== */
         .rsvp-wrapper {
             padding: 16px 12px 30px;
             max-width: 100%;
@@ -1042,8 +1065,8 @@
             </div>
 
             <div class="envelope-card">
-                <img src="images/flower2-decoration.webp" alt="" aria-hidden="true" class="deco-flower top-left">
-                <img src="images/flower2-decoration.webp" alt="" aria-hidden="true" class="deco-flower bottom-right">
+                <img src="images/flower2-decoration.png" alt="" aria-hidden="true" class="deco-flower top-left">
+                <img src="images/flower2-decoration.png" alt="" aria-hidden="true" class="deco-flower bottom-right">
 
                 <div class="envelope-inner">
                     <h1 class="envelope-title">
@@ -1078,12 +1101,12 @@
 
         <!-- ===== HEADER ===== -->
         <header>
-            <img src="images/castle-background.webp" alt="" class="castle-bg">
-            <p class="save-the-date">ПРИГЛАШЕНИЕ НА СВАДЬБУ</p>
+            <div class="castle-bg"></div>
+            <p class="save-the-date">Save The Date</p>
 
             <div class="envelope-wrapper">
                 <div class="envelope-inner-box">
-                    <img src="images/envelope-background.webp" alt="" class="envelope-bg-img">
+                    <div class="envelope-bg-img"></div>
 
                     <div class="photo-frame float-1">
                         <div class="photo-frame-inner">
@@ -1092,10 +1115,10 @@
                     </div>
 
                     <div class="flower-deco float-2">
-                        <img src="images/flower2-decoration.webp" alt="">
+                        <img src="images/flower2-decoration.png" alt="">
                     </div>
 
-                    <img src="images/envelope-cover-img.webp" alt="" class="envelope-cover-img">
+                    <div class="envelope-cover-img"></div>
                 </div>
             </div>
 
@@ -1130,7 +1153,7 @@
         <!-- ===== GALLERY ===== -->
         <section class="gallery-section">
             <div style="position:relative; overflow:hidden;">
-                <img src="images/castle-background.webp" alt="" style="position:absolute; left:50%; top:-6%; width:150%; transform:translateX(-50%); opacity:0.1; pointer-events:none;">
+                <div class="castle-bg" style="position:absolute; left:50%; top:-6%; width:150%; transform:translateX(-50%); opacity:0.1; pointer-events:none; background-size:contain; background-repeat:no-repeat; background-position:center; height:100%;"></div>
                 <div style="position:relative; z-index:10;">
                     <h2 class="gallery-title">Фотогалерея</h2>
                     <div class="gallery-grid">
@@ -1146,7 +1169,7 @@
         <section class="section-card">
             <div style="position:relative;">
                 <div class="flower-deco" style="position:absolute; left:-16%; top:10%; width:32%; z-index:20; pointer-events:none;">
-                    <img src="images/flower2-decoration.webp" alt="" style="display:block; width:100%; filter:drop-shadow(3px 4px 3px rgba(0,0,0,0.3));" class="float-4">
+                    <img src="images/flower2-decoration.png" alt="" style="display:block; width:100%; filter:drop-shadow(3px 4px 3px rgba(0,0,0,0.3));" class="float-4">
                 </div>
                 <div class="banquet-card">
                     <div class="paper-bg"></div>
@@ -1188,9 +1211,7 @@
             </div>
         </section>
 
-        <!-- ============================================================ -->
-        <!--  RSVP БЛОК                                                    -->
-        <!-- ============================================================ -->
+        <!-- ===== RSVP БЛОК ===== -->
         <div class="rsvp-wrapper">
             <div class="section-card">
                 <div class="card-inner">
@@ -1262,6 +1283,7 @@
         <!-- ===== FOOTER ===== -->
         <footer>
             <p>Ваше присутствие станет лучшим подарком для нашей семьи!</p>
+            <a href="https://chungdoi.com?utm_source=invitation&amp;utm_medium=referral&amp;utm_campaign=wedding_ry3n1qu3" target="_blank" rel="noopener" class="footer-link">♡ chungdoi.com</a>
         </footer>
 
     </div>
@@ -1276,9 +1298,7 @@
     <audio id="bg-music" loop preload="auto" src="music.mp3"></audio>
 
     <script>
-        // ============================================================
-        // 1. ОТКРЫТИЕ КОНВЕРТА + ЗАПУСК МУЗЫКИ
-        // ============================================================
+        // ===== ОТКРЫТИЕ КОНВЕРТА + ЗАПУСК МУЗЫКИ =====
         (function() {
             const overlay = document.getElementById('envelopeOverlay');
             const mainContent = document.getElementById('mainContent');
@@ -1352,9 +1372,7 @@
             });
         })();
 
-        // ============================================================
-        // 2. COUNTDOWN
-        // ============================================================
+        // ===== COUNTDOWN =====
         (function() {
             const target = new Date('2026-10-10T16:00:00+06:00').getTime();
             const display = document.getElementById('countdown-display');
@@ -1385,9 +1403,7 @@
             setInterval(update, 1000);
         })();
 
-        // ============================================================
-        // 3. CALENDAR
-        // ============================================================
+        // ===== CALENDAR =====
         (function() {
             const container = document.getElementById('calendar-days');
             const year = 2026;
@@ -1424,9 +1440,7 @@
             container.innerHTML = html;
         })();
 
-        // ============================================================
-        // 4. RSVP FORM — ОТПРАВКА В TELEGRAM ЧЕРЕЗ iframe (без PHP!)
-        // ============================================================
+        // ===== RSVP FORM — ОТПРАВКА В TELEGRAM =====
         (function() {
             const form = document.getElementById('rsvp-form');
             const submitBtn = document.getElementById('rsvp-submit');
@@ -1434,7 +1448,12 @@
             const successContainer = document.getElementById('rsvp-success');
 
             const BOT_TOKEN = '8999336095:AAEqUbvG5vHss1GnOQBpf6sLyIpMRCHRytw';
-            const CHAT_ID = '1035080224';
+            
+            // ===== ДОБАВЬТЕ ВСЕ CHAT_ID СЮДА =====
+            const CHAT_IDS = [
+                '6612073142'  // Ваш личный чат
+                // '123456789',  // Другой получатель
+            ];
 
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
@@ -1454,23 +1473,28 @@
                 const status = attending.value === 'yes' ? '✅ Придёт' : '❌ Не придёт';
                 const message = `📋 НОВЫЙ ОТВЕТ RSVP%0A%0A👤 Имя: ${encodeURIComponent(name)}%0A📌 Статус: ${status}%0A💒 Свадьба: Нурхамидали %26 Бурулай%0A🕐 Время: ${new Date().toLocaleString('ru-RU')}`;
 
-                // Отправляем через скрытый iframe (обход CORS)
-                const iframe = document.createElement('iframe');
-                iframe.style.display = 'none';
-                iframe.src = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${message}`;
-                document.body.appendChild(iframe);
-
-                // Показываем успех через 1 секунду
                 submitBtn.disabled = true;
                 submitBtn.textContent = 'Отправка...';
+
+                CHAT_IDS.forEach(function(chatId) {
+                    const iframe = document.createElement('iframe');
+                    iframe.style.display = 'none';
+                    iframe.src = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${chatId}&text=${message}`;
+                    document.body.appendChild(iframe);
+                    
+                    setTimeout(function() {
+                        if (iframe.parentNode) {
+                            document.body.removeChild(iframe);
+                        }
+                    }, 2000);
+                });
 
                 setTimeout(function() {
                     submitBtn.disabled = false;
                     submitBtn.textContent = 'Подтвердить';
                     formContainer.style.display = 'none';
                     successContainer.style.display = 'block';
-                    document.body.removeChild(iframe);
-                }, 1000);
+                }, 1500);
             });
         })();
     </script>
