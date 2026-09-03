@@ -11,9 +11,9 @@
     <!-- Open Graph -->
     <meta property="og:title" content="Свадьба Нурхамидали &amp; Бурулай" />
     <meta property="og:description" content="Приглашаем вас на нашу свадьбу! 10 октября 2026 года в 16:00. Ждём вас!" />
-    <meta property="og:url" content="https://nurhaburulay.vercel.app/" />
+    <meta property="og:url" content="https://ваш-сайт.vercel.app" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://nurhaburulay.vercel.app/images/og-image.jpg" />
+    <meta property="og:image" content="https://ваш-сайт.vercel.app/images/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Свадьба Нурхамидали &amp; Бурулай" />
@@ -29,6 +29,9 @@
             min-height: 100vh;
             overflow-y: auto !important;
             height: auto !important;
+        }
+        html {
+            scroll-behavior: smooth;
         }
 
         /* ===== КОНВЕРТ (ПЕРВЫЙ ЭКРАН) ===== */
@@ -81,6 +84,7 @@
             height: 140px;
             width: auto;
             opacity: 0.8;
+            mix-blend-mode: multiply;
         }
         @media (min-width: 768px) {
             .envelope-card .deco-flower { height: 280px; }
@@ -280,7 +284,7 @@
         .paper-bg {
             position: absolute;
             inset: 0;
-            background-image: url('images/paper.png');
+            background-image: url('images/paper.webp');
             background-size: 100% auto;
             background-position: top center;
             mix-blend-mode: multiply;
@@ -321,11 +325,12 @@
             opacity: 0.1;
             pointer-events: none;
             max-width: none;
-            background-image: url('images/castle-background.png');
+            background-image: url('images/castle-background.webp');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
             height: 100%;
+            mix-blend-mode: multiply;
         }
         .save-the-date {
             position: relative;
@@ -360,10 +365,11 @@
             inset: 0;
             width: 100%;
             z-index: 10;
-            background-image: url('images/envelope-background.png');
+            background-image: url('images/envelope-background.webp');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
+            mix-blend-mode: multiply;
         }
         .photo-frame {
             position: absolute;
@@ -398,6 +404,7 @@
             width: 100%;
             transform: rotate(-17deg);
             filter: drop-shadow(3px 4px 3px rgba(0,0,0,0.3));
+            mix-blend-mode: multiply;
         }
         .envelope-cover-img {
             position: absolute;
@@ -406,11 +413,12 @@
             z-index: 30;
             width: 100%;
             pointer-events: none;
-            background-image: url('images/envelope-cover.png');
+            background-image: url('images/envelope-cover.webp');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: bottom;
             height: 100%;
+            mix-blend-mode: multiply;
         }
 
         .names {
@@ -555,6 +563,7 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             transition: transform 0.3s ease;
             cursor: pointer;
+            background: #f0ebe4;
         }
         .gallery-grid img:hover {
             transform: scale(1.03);
@@ -609,125 +618,117 @@
             font-size: 14px;
         }
 
-        /* ===== КАЛЕНДАРЬ — адаптивный и центрированный ===== */
-.calendar-wrap {
-    background: #ece4d8;
-    border-radius: 10px;
-    padding: 8px 12px 16px;
-    margin-top: 16px;
-    max-width: 340px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    color: #511419;
-    overflow: hidden;
-}
-@media (min-width: 768px) {
-    .calendar-wrap {
-        max-width: 380px;
-        padding: 10px 20px 20px;
-    }
-}
-.calendar-header {
-    font-family: 'The Nautigal', cursive;
-    font-size: 22px;
-    text-align: center;
-    padding: 6px 0 10px;
-    border-bottom: 2px solid rgba(81,20,25,0.27);
-}
-@media (min-width: 768px) {
-    .calendar-header {
-        font-size: 26px;
-        padding: 8px 0 12px;
-    }
-}
-.calendar-weekdays {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    font-size: 10px;
-    text-align: center;
-    padding: 6px 0;
-    opacity: 0.6;
-    font-weight: 600;
-}
-@media (min-width: 768px) {
-    .calendar-weekdays {
-        font-size: 11px;
-        padding: 8px 0;
-    }
-}
-.calendar-days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 2px;
-    padding: 4px 0;
-}
-@media (min-width: 768px) {
-    .calendar-days {
-        gap: 4px;
-        padding: 6px 0;
-    }
-}
-.calendar-days > div {
-    text-align: center;
-    font-size: 12px;
-    padding: 4px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    aspect-ratio: 1/1;
-    min-height: 28px;
-    min-width: 28px;
-}
-@media (min-width: 768px) {
-    .calendar-days > div {
-        font-size: 14px;
-        min-height: 34px;
-        min-width: 34px;
-    }
-}
-.calendar-days > div .date-number {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-.calendar-day-heart {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 34px;
-    max-height: 34px;
-    margin: 0 auto;
-}
-@media (min-width: 768px) {
-    .calendar-day-heart {
-        max-width: 40px;
-        max-height: 40px;
-    }
-}
-.calendar-day-heart svg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    fill: #511419;
-}
-.calendar-day-heart span {
-    position: relative;
-    z-index: 10;
-    font-weight: 700;
-    color: #fff;
-    font-size: 11px;
-}
-@media (min-width: 768px) {
-    .calendar-day-heart span {
-        font-size: 13px;
-    }
-}
+        .calendar-wrap {
+            background: #ece4d8;
+            border-radius: 10px;
+            padding: 8px 12px 16px;
+            margin-top: 16px;
+            max-width: 340px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            color: #511419;
+            overflow: hidden;
+        }
+        @media (min-width: 768px) {
+            .calendar-wrap {
+                max-width: 380px;
+                padding: 10px 20px 20px;
+            }
+        }
+        .calendar-header {
+            font-family: 'The Nautigal', cursive;
+            font-size: 22px;
+            text-align: center;
+            padding: 6px 0 10px;
+            border-bottom: 2px solid rgba(81,20,25,0.27);
+        }
+        @media (min-width: 768px) {
+            .calendar-header {
+                font-size: 26px;
+                padding: 8px 0 12px;
+            }
+        }
+        .calendar-weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            font-size: 10px;
+            text-align: center;
+            padding: 6px 0;
+            opacity: 0.6;
+            font-weight: 600;
+        }
+        @media (min-width: 768px) {
+            .calendar-weekdays {
+                font-size: 11px;
+                padding: 8px 0;
+            }
+        }
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 2px;
+            padding: 4px 0;
+        }
+        @media (min-width: 768px) {
+            .calendar-days {
+                gap: 4px;
+                padding: 6px 0;
+            }
+        }
+        .calendar-days > div {
+            text-align: center;
+            font-size: 12px;
+            padding: 4px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 1/1;
+            min-height: 28px;
+            min-width: 28px;
+        }
+        @media (min-width: 768px) {
+            .calendar-days > div {
+                font-size: 14px;
+                min-height: 34px;
+                min-width: 34px;
+            }
+        }
+        .calendar-day-heart {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 34px;
+            max-height: 34px;
+            margin: 0 auto;
+        }
+        @media (min-width: 768px) {
+            .calendar-day-heart {
+                max-width: 40px;
+                max-height: 40px;
+            }
+        }
+        .calendar-day-heart svg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            fill: #511419;
+        }
+        .calendar-day-heart span {
+            position: relative;
+            z-index: 10;
+            font-weight: 700;
+            color: #fff;
+            font-size: 11px;
+        }
+        @media (min-width: 768px) {
+            .calendar-day-heart span {
+                font-size: 13px;
+            }
+        }
 
         .add-calendar {
             display: inline-block;
@@ -738,7 +739,6 @@
             text-underline-offset: 4px;
         }
 
-        /* ===== RSVP БЛОК ===== */
         .rsvp-wrapper {
             padding: 16px 12px 30px;
             max-width: 100%;
@@ -952,7 +952,6 @@
             color: rgba(81, 20, 25, 0.6);
         }
 
-        /* ===== MAP ===== */
         .map-section {
             padding: 30px 20px 30px;
             text-align: center;
@@ -1112,8 +1111,8 @@
             </div>
 
             <div class="envelope-card">
-                <img src="images/flower2-decoration.png" alt="" aria-hidden="true" class="deco-flower top-left">
-                <img src="images/flower2-decoration.png" alt="" aria-hidden="true" class="deco-flower bottom-right">
+                <img src="images/flower2-decoration.webp" alt="" aria-hidden="true" class="deco-flower top-left">
+                <img src="images/flower2-decoration.webp" alt="" aria-hidden="true" class="deco-flower bottom-right">
 
                 <div class="envelope-inner">
                     <h1 class="envelope-title">
@@ -1157,12 +1156,12 @@
 
                     <div class="photo-frame float-1">
                         <div class="photo-frame-inner">
-                            <img src="images/hero-photo.jpg" alt="Нурхамидали и Бурулай">
+                            <img src="images/hero-photo.webp" alt="Нурхамидали и Бурулай">
                         </div>
                     </div>
 
                     <div class="flower-deco float-2">
-                        <img src="images/flower2-decoration.png" alt="">
+                        <img src="images/flower2-decoration.webp" alt="">
                     </div>
 
                     <div class="envelope-cover-img"></div>
@@ -1200,23 +1199,23 @@
         <!-- ===== GALLERY ===== -->
         <section class="gallery-section">
             <div style="position:relative; overflow:hidden;">
-                <div class="castle-bg" style="position:absolute; left:50%; top:-6%; width:150%; transform:translateX(-50%); opacity:0.1; pointer-events:none; background-size:contain; background-repeat:no-repeat; background-position:center; height:100%;"></div>
+                <div class="castle-bg" style="position:absolute; left:50%; top:-6%; width:150%; transform:translateX(-50%); opacity:0.1; pointer-events:none; background-size:contain; background-repeat:no-repeat; background-position:center; height:100%; mix-blend-mode:multiply;"></div>
                 <div style="position:relative; z-index:10;">
                     <h2 class="gallery-title">Фотогалерея</h2>
                     <div class="gallery-grid">
-                        <img src="images/gallery-1.jpg" alt="Фото 1">
-                        <img src="images/gallery-2.jpg" alt="Фото 2">
-                        <img src="images/gallery-3.jpg" alt="Фото 3">
+                        <img src="images/gallery-1.webp" alt="Фото 1" loading="lazy">
+                        <img src="images/gallery-2.webp" alt="Фото 2" loading="lazy">
+                        <img src="images/gallery-3.webp" alt="Фото 3" loading="lazy">
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ===== BANQUET ===== -->
-        <section class="section-card">
+        <section class="section-card" id="banquet-section">
             <div style="position:relative;">
                 <div class="flower-deco" style="position:absolute; left:-16%; top:10%; width:32%; z-index:20; pointer-events:none;">
-                    <img src="images/flower2-decoration.png" alt="" style="display:block; width:100%; filter:drop-shadow(3px 4px 3px rgba(0,0,0,0.3));" class="float-4">
+                    <img src="images/flower2-decoration.webp" alt="" style="display:block; width:100%; filter:drop-shadow(3px 4px 3px rgba(0,0,0,0.3)); mix-blend-mode:multiply;" class="float-4">
                 </div>
                 <div class="banquet-card">
                     <div class="paper-bg"></div>
@@ -1258,7 +1257,7 @@
             </div>
         </section>
 
-        <!-- ===== RSVP БЛОК ===== -->
+        <!-- ===== RSVP ===== -->
         <div class="rsvp-wrapper">
             <div class="section-card">
                 <div class="card-inner">
@@ -1277,7 +1276,7 @@
                         <div id="rsvp-form-container">
                             <form id="rsvp-form">
                                 <label class="rsvp-label">Ваше имя</label>
-                                <input type="text" id="guest-name" class="rsvp-input" placeholder="..." required>
+                                <input type="text" id="guest-name" class="rsvp-input" placeholder="Например: Семья Ивановых" required>
 
                                 <label class="rsvp-label" style="margin-bottom:6px;">Вы придёте?</label>
                                 <div class="rsvp-radio-group">
@@ -1344,7 +1343,7 @@
     <audio id="bg-music" loop preload="auto" src="music.mp3"></audio>
 
     <script>
-        // ===== ОТКРЫТИЕ КОНВЕРТА + ЗАПУСК МУЗЫКИ =====
+        // ===== ОТКРЫТИЕ КОНВЕРТА + МУЗЫКА + АВТОСКРОЛЛ =====
         (function() {
             const overlay = document.getElementById('envelopeOverlay');
             const mainContent = document.getElementById('mainContent');
@@ -1355,29 +1354,61 @@
             let isPlaying = false;
 
             function openInvitation() {
+                // 1. Скрываем конверт
                 overlay.classList.add('hidden');
+
+                // 2. Показываем основной контент
                 mainContent.classList.add('visible');
+
+                // 3. Показываем кнопку музыки
                 musicBtn.classList.add('visible');
 
+                // 4. Запускаем музыку
                 audio.play().then(function() {
                     isPlaying = true;
                     musicIcon.textContent = '♫';
+                    console.log('✅ Музыка запущена');
                 }).catch(function(err) {
                     console.log('❌ Не удалось запустить музыку:', err);
                 });
+
+                // 5. АВТОМАТИЧЕСКИЙ СКРОЛЛ ЧЕРЕЗ 1 СЕКУНДУ
+                setTimeout(function() {
+                    // Ищем блок с банкетом
+                    const target = document.getElementById('banquet-section') ||
+                                  document.querySelector('.banquet-card');
+
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        console.log('📜 Автоскролл до банкета');
+                    } else {
+                        // Если блок не найден — скроллим на 55% страницы
+                        window.scrollTo({
+                            top: document.body.scrollHeight * 0.55,
+                            behavior: 'smooth'
+                        });
+                        console.log('📜 Автоскролл на 55% страницы');
+                    }
+                }, 1000); // Задержка 1 секунда
             }
 
+            // Клик по кнопке "Открыть"
             openBtn.addEventListener('click', function(e) {
                 e.stopPropagation();
                 openInvitation();
             });
 
+            // Клик по всему конверту (кроме кнопки)
             overlay.addEventListener('click', function(e) {
                 if (!e.target.closest('.envelope-btn')) {
                     openInvitation();
                 }
             });
 
+            // Если музыка не запустилась — пробуем при первом взаимодействии
             function tryPlayOnInteraction() {
                 if (!isPlaying) {
                     audio.play().then(function() {
@@ -1391,6 +1422,7 @@
             document.addEventListener('click', tryPlayOnInteraction);
             document.addEventListener('touchstart', tryPlayOnInteraction);
 
+            // Кнопка вкл/выкл музыки
             musicBtn.addEventListener('click', function(e) {
                 e.stopPropagation();
                 if (isPlaying) {
@@ -1494,12 +1526,7 @@
             const successContainer = document.getElementById('rsvp-success');
 
             const BOT_TOKEN = '8999336095:AAEqUbvG5vHss1GnOQBpf6sLyIpMRCHRytw';
-            
-            // ===== ДОБАВЬТЕ ВСЕ CHAT_ID СЮДА =====
-            const CHAT_IDS = [
-                '6612073142'  // Ваш личный чат
-                // '123456789',  // Другой получатель
-            ];
+            const CHAT_IDS = ['6612073142'];
 
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
@@ -1527,7 +1554,7 @@
                     iframe.style.display = 'none';
                     iframe.src = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${chatId}&text=${message}`;
                     document.body.appendChild(iframe);
-                    
+
                     setTimeout(function() {
                         if (iframe.parentNode) {
                             document.body.removeChild(iframe);
