@@ -11,9 +11,9 @@
     <!-- Open Graph -->
     <meta property="og:title" content="Свадьба Нурхамидали &amp; Бурулай" />
     <meta property="og:description" content="Приглашаем вас на нашу свадьбу! 10 октября 2026 года в 16:00. Ждём вас!" />
-    <meta property="og:url" content="https://nurhaburulay.vercel.app/" />
+    <meta property="og:url" content="https://ваш-сайт.vercel.app" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://nurhaburulay.vercel.app/images/og-image.jpg" />
+    <meta property="og:image" content="https://ваш-сайт.vercel.app/images/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Свадьба Нурхамидали &amp; Бурулай" />
@@ -29,9 +29,6 @@
             min-height: 100vh;
             overflow-y: auto !important;
             height: auto !important;
-        }
-        html {
-            scroll-behavior: smooth;
         }
 
         /* ===== КОНВЕРТ (ПЕРВЫЙ ЭКРАН) ===== */
@@ -284,7 +281,7 @@
         .paper-bg {
             position: absolute;
             inset: 0;
-            background-image: url('images/paper.webp');
+            background-image: url('images/paper.png');
             background-size: 100% auto;
             background-position: top center;
             mix-blend-mode: multiply;
@@ -325,7 +322,7 @@
             opacity: 0.1;
             pointer-events: none;
             max-width: none;
-            background-image: url('images/castle-background.webp');
+            background-image: url('images/castle-background.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
@@ -365,7 +362,7 @@
             inset: 0;
             width: 100%;
             z-index: 10;
-            background-image: url('images/envelope-background.webp');
+            background-image: url('images/envelope-background.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
@@ -413,12 +410,12 @@
             z-index: 30;
             width: 100%;
             pointer-events: none;
-            background-image: url('images/envelope-cover.webp');
+            background-image: url('images/envelope-cover.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: bottom;
             height: 100%;
-            mix-blend-mode: multiply;
+            
         }
 
         .names {
@@ -1111,8 +1108,8 @@
             </div>
 
             <div class="envelope-card">
-                <img src="images/flower2-decoration.webp" alt="" aria-hidden="true" class="deco-flower top-left">
-                <img src="images/flower2-decoration.webp" alt="" aria-hidden="true" class="deco-flower bottom-right">
+                <img src="images/flower2-decoration.png" alt="" aria-hidden="true" class="deco-flower top-left">
+                <img src="images/flower2-decoration.png" alt="" aria-hidden="true" class="deco-flower bottom-right">
 
                 <div class="envelope-inner">
                     <h1 class="envelope-title">
@@ -1156,12 +1153,12 @@
 
                     <div class="photo-frame float-1">
                         <div class="photo-frame-inner">
-                            <img src="images/hero-photo.webp" alt="Нурхамидали и Бурулай">
+                            <img src="images/hero-photo.jpg" alt="Нурхамидали и Бурулай">
                         </div>
                     </div>
 
                     <div class="flower-deco float-2">
-                        <img src="images/flower2-decoration.webp" alt="">
+                        <img src="images/flower2-decoration.png" alt="">
                     </div>
 
                     <div class="envelope-cover-img"></div>
@@ -1203,9 +1200,9 @@
                 <div style="position:relative; z-index:10;">
                     <h2 class="gallery-title">Фотогалерея</h2>
                     <div class="gallery-grid">
-                        <img src="images/gallery-1.webp" alt="Фото 1" loading="lazy">
-                        <img src="images/gallery-2.webp" alt="Фото 2" loading="lazy">
-                        <img src="images/gallery-3.webp" alt="Фото 3" loading="lazy">
+                        <img src="images/gallery-1.jpg" alt="Фото 1" loading="lazy">
+                        <img src="images/gallery-2.jpg" alt="Фото 2" loading="lazy">
+                        <img src="images/gallery-3.jpg" alt="Фото 3" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -1215,7 +1212,7 @@
         <section class="section-card" id="banquet-section">
             <div style="position:relative;">
                 <div class="flower-deco" style="position:absolute; left:-16%; top:10%; width:32%; z-index:20; pointer-events:none;">
-                    <img src="images/flower2-decoration.webp" alt="" style="display:block; width:100%; filter:drop-shadow(3px 4px 3px rgba(0,0,0,0.3)); mix-blend-mode:multiply;" class="float-4">
+                    <img src="images/flower2-decoration.png" alt="" style="display:block; width:100%; filter:drop-shadow(3px 4px 3px rgba(0,0,0,0.3)); mix-blend-mode:multiply;" class="float-4">
                 </div>
                 <div class="banquet-card">
                     <div class="paper-bg"></div>
@@ -1343,227 +1340,301 @@
     <!-- ===== AUDIO ===== -->
     <audio id="bg-music" loop preload="auto" src="music.mp3"></audio>
 
-    <script>
-        // ===== ОТКРЫТИЕ КОНВЕРТА + МУЗЫКА + АВТОСКРОЛЛ =====
-        (function() {
-            const overlay = document.getElementById('envelopeOverlay');
-            const mainContent = document.getElementById('mainContent');
-            const openBtn = document.getElementById('openInvitationBtn');
-            const audio = document.getElementById('bg-music');
-            const musicBtn = document.getElementById('music-toggle');
-            const musicIcon = document.getElementById('music-icon');
-            let isPlaying = false;
+<script>
+    // ===== ОТКРЫТИЕ КОНВЕРТА + МУЗЫКА + АВТОСКРОЛЛ =====
+    (function() {
+        const overlay = document.getElementById('envelopeOverlay');
+        const mainContent = document.getElementById('mainContent');
+        const openBtn = document.getElementById('openInvitationBtn');
+        const audio = document.getElementById('bg-music');
+        const musicBtn = document.getElementById('music-toggle');
+        const musicIcon = document.getElementById('music-icon');
+        let isPlaying = false;
 
-            function openInvitation() {
-                // 1. Скрываем конверт
-                overlay.classList.add('hidden');
+        // ===== ПЛАВНАЯ ПРОКРУТКА С ВОЗМОЖНОСТЬЮ ПРЕРЫВАНИЯ =====
+        let scrollAnimationId = null;
+        let isScrolling = false;
 
-                // 2. Показываем основной контент
-                mainContent.classList.add('visible');
+        function smoothScrollToBottom(duration) {
+            // Если уже скроллим — останавливаем
+            if (isScrolling) {
+                cancelAnimationFrame(scrollAnimationId);
+                isScrolling = false;
+            }
 
-                // 3. Показываем кнопку музыки
-                musicBtn.classList.add('visible');
+            const startY = window.scrollY;
+            const pageHeight = document.documentElement.scrollHeight;
+            const windowHeight = window.innerHeight;
+            const targetY = Math.max(0, pageHeight - windowHeight);
+            const distance = targetY - startY;
+            const startTime = performance.now();
 
-                // 4. Запускаем музыку
+            // Если уже внизу — ничего не делаем
+            if (Math.abs(distance) < 10) {
+                console.log('📜 Уже внизу страницы');
+                return;
+            }
+
+            isScrolling = true;
+
+            function scrollStep(currentTime) {
+    if (!isScrolling) return;
+
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    
+    // Простая линейная скорость (равномерно от начала до конца)
+    const currentY = startY + distance * progress;
+    window.scrollTo(0, currentY);
+
+    if (progress < 1 && isScrolling) {
+        scrollAnimationId = requestAnimationFrame(scrollStep);
+    } else {
+        isScrolling = false;
+        scrollAnimationId = null;
+        console.log('✅ Автоскролл завершён');
+    }
+}
+
+            scrollAnimationId = requestAnimationFrame(scrollStep);
+        }
+
+        // ===== ОТСЛЕЖИВАНИЕ ВЗАИМОДЕЙСТВИЯ ПОЛЬЗОВАТЕЛЯ =====
+        function stopAutoScroll() {
+            if (isScrolling) {
+                cancelAnimationFrame(scrollAnimationId);
+                isScrolling = false;
+                scrollAnimationId = null;
+                console.log('🛑 Автоскролл остановлен пользователем');
+            }
+        }
+
+        // Прерываем при касании/клике/скролле
+        document.addEventListener('touchstart', stopAutoScroll, { passive: true });
+        document.addEventListener('wheel', stopAutoScroll, { passive: true });
+        document.addEventListener('mousedown', stopAutoScroll, { passive: true });
+        
+        // Прерываем при скролле пользователя (с задержкой чтобы отличить от программного)
+        let scrollTimeout = null;
+        window.addEventListener('scroll', function() {
+            if (isScrolling) {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(function() {
+                    stopAutoScroll();
+                }, 150);
+            }
+        }, { passive: true });
+
+        function openInvitation() {
+            // 1. Скрываем конверт
+            overlay.classList.add('hidden');
+
+            // 2. Показываем основной контент
+            mainContent.classList.add('visible');
+
+            // 3. Показываем кнопку музыки
+            musicBtn.classList.add('visible');
+
+            // 4. Запускаем музыку
+            audio.play().then(function() {
+                isPlaying = true;
+                musicIcon.textContent = '♫';
+                console.log('✅ Музыка запущена');
+            }).catch(function(err) {
+                console.log('❌ Не удалось запустить музыку:', err);
+            });
+
+            // ===== 5. ПЛАВНЫЙ АВТОСКРОЛЛ ПОСЛЕ ЗАГРУЗКИ =====
+            setTimeout(function() {
+                // Ждём две кадры для полной отрисовки
+                requestAnimationFrame(function() {
+                    requestAnimationFrame(function() {
+                        // Небольшая задержка перед скроллом
+                        setTimeout(function() {
+                            smoothScrollToBottom(50000);
+                            console.log('📜 Начинаем плавный автоскролл до конца');
+                        }, 300);
+                    });
+                });
+            }, 2000); // 1 секунда после открытия
+        }
+
+        // Клик по кнопке "Открыть"
+        openBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            openInvitation();
+        });
+
+        // Клик по всему конверту (кроме кнопки)
+        overlay.addEventListener('click', function(e) {
+            if (!e.target.closest('.envelope-btn')) {
+                openInvitation();
+            }
+        });
+
+        // Если музыка не запустилась — пробуем при первом взаимодействии
+        function tryPlayOnInteraction() {
+            if (!isPlaying) {
                 audio.play().then(function() {
                     isPlaying = true;
                     musicIcon.textContent = '♫';
-                    console.log('✅ Музыка запущена');
-                }).catch(function(err) {
-                    console.log('❌ Не удалось запустить музыку:', err);
-                });
-
-                // ===== 5. ПЛАВНЫЙ АВТОСКРОЛЛ ДО КОНЦА СТРАНИЦЫ =====
-                setTimeout(function() {
-                    const pageHeight = document.documentElement.scrollHeight;
-                    const windowHeight = window.innerHeight;
-                    const targetScroll = pageHeight - windowHeight;
-
-                    window.scrollTo({
-                        top: targetScroll,
-                        behavior: 'smooth'
-                    });
-
-                    console.log('📜 Автоскролл до конца страницы');
-                }, 1000);
+                }).catch(function() {});
             }
+            document.removeEventListener('click', tryPlayOnInteraction);
+            document.removeEventListener('touchstart', tryPlayOnInteraction);
+        }
+        document.addEventListener('click', tryPlayOnInteraction);
+        document.addEventListener('touchstart', tryPlayOnInteraction);
 
-            // Клик по кнопке "Открыть"
-            openBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                openInvitation();
-            });
-
-            // Клик по всему конверту (кроме кнопки)
-            overlay.addEventListener('click', function(e) {
-                if (!e.target.closest('.envelope-btn')) {
-                    openInvitation();
-                }
-            });
-
-            // Если музыка не запустилась — пробуем при первом взаимодействии
-            function tryPlayOnInteraction() {
-                if (!isPlaying) {
-                    audio.play().then(function() {
-                        isPlaying = true;
-                        musicIcon.textContent = '♫';
-                    }).catch(function() {});
-                }
-                document.removeEventListener('click', tryPlayOnInteraction);
-                document.removeEventListener('touchstart', tryPlayOnInteraction);
-            }
-            document.addEventListener('click', tryPlayOnInteraction);
-            document.addEventListener('touchstart', tryPlayOnInteraction);
-
-            // Кнопка вкл/выкл музыки
-            musicBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                if (isPlaying) {
-                    audio.pause();
-                    isPlaying = false;
-                    musicIcon.textContent = '♪';
-                } else {
-                    audio.play().then(function() {
-                        isPlaying = true;
-                        musicIcon.textContent = '♫';
-                    }).catch(function() {
-                        alert('Не удалось воспроизвести музыку. Проверьте файл music.mp3.');
-                    });
-                }
-            });
-
-            audio.addEventListener('pause', function() {
-                if (!audio.paused) return;
+        // Кнопка вкл/выкл музыки
+        musicBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (isPlaying) {
+                audio.pause();
                 isPlaying = false;
                 musicIcon.textContent = '♪';
-            });
-            audio.addEventListener('play', function() {
-                isPlaying = true;
-                musicIcon.textContent = '♫';
-            });
-        })();
-
-        // ===== COUNTDOWN =====
-        (function() {
-            const target = new Date('2026-10-10T16:00:00+06:00').getTime();
-            const display = document.getElementById('countdown-display');
-
-            function pad(n) { return String(n).padStart(2, '0'); }
-
-            function update() {
-                const now = Date.now();
-                let diff = target - now;
-
-                if (diff <= 0) {
-                    display.textContent = 'Свадьба уже началась! 🎉';
-                    return;
-                }
-
-                const days = Math.floor(diff / 86400000);
-                diff -= days * 86400000;
-                const hours = Math.floor(diff / 3600000);
-                diff -= hours * 3600000;
-                const minutes = Math.floor(diff / 60000);
-                diff -= minutes * 60000;
-                const seconds = Math.floor(diff / 1000);
-
-                display.textContent = days + ' дн. ' + hours + ' ч ' + pad(minutes) + ' мин ' + pad(seconds) + ' сек';
-            }
-
-            update();
-            setInterval(update, 1000);
-        })();
-
-        // ===== CALENDAR =====
-        (function() {
-            const container = document.getElementById('calendar-days');
-            const year = 2026;
-            const month = 9;
-            const weddingDay = 10;
-
-            const firstDay = new Date(year, month, 1).getDay();
-            const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-            let startOffset = (firstDay === 0) ? 6 : firstDay - 1;
-
-            let html = '';
-            for (let i = 0; i < startOffset; i++) {
-                html += '<div></div>';
-            }
-
-            for (let d = 1; d <= daysInMonth; d++) {
-                if (d === weddingDay) {
-                    html += `
-                        <div>
-                            <div class="calendar-day-heart">
-                                <svg viewBox="0 0 24 22">
-                                    <path d="M12 21C12 21 1.5 13.5 1.5 7.5C1.5 4.46 3.96 2 7 2C8.76 2 10.35 2.81 11.4 4.09L12 4.8L12.6 4.09C13.65 2.81 15.24 2 17 2C20.04 2 22.5 4.46 22.5 7.5C22.5 13.5 12 21 12 21Z"/>
-                                </svg>
-                                <span>${d}</span>
-                            </div>
-                        </div>
-                    `;
-                } else {
-                    html += `<div><span>${d}</span></div>`;
-                }
-            }
-
-            container.innerHTML = html;
-        })();
-
-        // ===== RSVP FORM — ОТПРАВКА В TELEGRAM =====
-        (function() {
-            const form = document.getElementById('rsvp-form');
-            const submitBtn = document.getElementById('rsvp-submit');
-            const formContainer = document.getElementById('rsvp-form-container');
-            const successContainer = document.getElementById('rsvp-success');
-
-            const BOT_TOKEN = '8999336095:AAEqUbvG5vHss1GnOQBpf6sLyIpMRCHRytw';
-            const CHAT_IDS = ['1035080224'];
-
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-
-                const name = document.getElementById('guest-name').value.trim();
-                const attending = document.querySelector('input[name="attending"]:checked');
-
-                if (!name) {
-                    alert('Пожалуйста, введите ваше имя.');
-                    return;
-                }
-                if (!attending) {
-                    alert('Пожалуйста, выберите, придёте ли вы.');
-                    return;
-                }
-
-                const status = attending.value === 'yes' ? '✅ Придёт' : '❌ Не придёт';
-                const message = `📋 НОВЫЙ ОТВЕТ RSVP%0A%0A👤 Имя: ${encodeURIComponent(name)}%0A📌 Статус: ${status}%0A💒 Свадьба: Нурхамидали %26 Бурулай%0A🕐 Время: ${new Date().toLocaleString('ru-RU')}`;
-
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Отправка...';
-
-                CHAT_IDS.forEach(function(chatId) {
-                    const iframe = document.createElement('iframe');
-                    iframe.style.display = 'none';
-                    iframe.src = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${chatId}&text=${message}`;
-                    document.body.appendChild(iframe);
-
-                    setTimeout(function() {
-                        if (iframe.parentNode) {
-                            document.body.removeChild(iframe);
-                        }
-                    }, 2000);
+            } else {
+                audio.play().then(function() {
+                    isPlaying = true;
+                    musicIcon.textContent = '♫';
+                }).catch(function() {
+                    alert('Не удалось воспроизвести музыку. Проверьте файл music.mp3.');
                 });
+            }
+        });
+
+        audio.addEventListener('pause', function() {
+            if (!audio.paused) return;
+            isPlaying = false;
+            musicIcon.textContent = '♪';
+        });
+        audio.addEventListener('play', function() {
+            isPlaying = true;
+            musicIcon.textContent = '♫';
+        });
+    })();
+
+    // ===== COUNTDOWN =====
+    (function() {
+        const target = new Date('2026-10-10T16:00:00+06:00').getTime();
+        const display = document.getElementById('countdown-display');
+
+        function pad(n) { return String(n).padStart(2, '0'); }
+
+        function update() {
+            const now = Date.now();
+            let diff = target - now;
+
+            if (diff <= 0) {
+                display.textContent = 'Свадьба уже началась! 🎉';
+                return;
+            }
+
+            const days = Math.floor(diff / 86400000);
+            diff -= days * 86400000;
+            const hours = Math.floor(diff / 3600000);
+            diff -= hours * 3600000;
+            const minutes = Math.floor(diff / 60000);
+            diff -= minutes * 60000;
+            const seconds = Math.floor(diff / 1000);
+
+            display.textContent = days + ' дн. ' + hours + ' ч ' + pad(minutes) + ' мин ' + pad(seconds) + ' сек';
+        }
+
+        update();
+        setInterval(update, 1000);
+    })();
+
+    // ===== CALENDAR =====
+    (function() {
+        const container = document.getElementById('calendar-days');
+        const year = 2026;
+        const month = 9;
+        const weddingDay = 10;
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        let startOffset = (firstDay === 0) ? 6 : firstDay - 1;
+
+        let html = '';
+        for (let i = 0; i < startOffset; i++) {
+            html += '<div></div>';
+        }
+
+        for (let d = 1; d <= daysInMonth; d++) {
+            if (d === weddingDay) {
+                html += `
+                    <div>
+                        <div class="calendar-day-heart">
+                            <svg viewBox="0 0 24 22">
+                                <path d="M12 21C12 21 1.5 13.5 1.5 7.5C1.5 4.46 3.96 2 7 2C8.76 2 10.35 2.81 11.4 4.09L12 4.8L12.6 4.09C13.65 2.81 15.24 2 17 2C20.04 2 22.5 4.46 22.5 7.5C22.5 13.5 12 21 12 21Z"/>
+                            </svg>
+                            <span>${d}</span>
+                        </div>
+                    </div>
+                `;
+            } else {
+                html += `<div><span>${d}</span></div>`;
+            }
+        }
+
+        container.innerHTML = html;
+    })();
+
+    // ===== RSVP FORM — ОТПРАВКА В TELEGRAM =====
+    (function() {
+        const form = document.getElementById('rsvp-form');
+        const submitBtn = document.getElementById('rsvp-submit');
+        const formContainer = document.getElementById('rsvp-form-container');
+        const successContainer = document.getElementById('rsvp-success');
+
+        const BOT_TOKEN = '8999336095:AAEqUbvG5vHss1GnOQBpf6sLyIpMRCHRytw';
+        const CHAT_IDS = ['1035080224'];
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('guest-name').value.trim();
+            const attending = document.querySelector('input[name="attending"]:checked');
+
+            if (!name) {
+                alert('Пожалуйста, введите ваше имя.');
+                return;
+            }
+            if (!attending) {
+                alert('Пожалуйста, выберите, придёте ли вы.');
+                return;
+            }
+
+            const status = attending.value === 'yes' ? '✅ Придёт' : '❌ Не придёт';
+            const message = `📋 НОВЫЙ ОТВЕТ RSVP%0A%0A👤 Имя: ${encodeURIComponent(name)}%0A📌 Статус: ${status}%0A💒 Свадьба: Нурхамидали %26 Бурулай%0A🕐 Время: ${new Date().toLocaleString('ru-RU')}`;
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Отправка...';
+
+            CHAT_IDS.forEach(function(chatId) {
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${chatId}&text=${message}`;
+                document.body.appendChild(iframe);
 
                 setTimeout(function() {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Подтвердить';
-                    formContainer.style.display = 'none';
-                    successContainer.style.display = 'block';
-                }, 1500);
+                    if (iframe.parentNode) {
+                        document.body.removeChild(iframe);
+                    }
+                }, 2000);
             });
-        })();
-    </script>
+
+            setTimeout(function() {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Подтвердить';
+                formContainer.style.display = 'none';
+                successContainer.style.display = 'block';
+            }, 1500);
+        });
+    })();
+</script>
 
 </body>
 </html>
